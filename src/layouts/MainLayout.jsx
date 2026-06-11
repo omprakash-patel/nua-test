@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
 
-import Navbar from "../components/Navbar/Navbar";
+import Navbar from "../components/navbar/Navbar";
 import CartDrawer from "../components/CartDrawer/CartDrawer";
 
 const MainLayout = () => {
