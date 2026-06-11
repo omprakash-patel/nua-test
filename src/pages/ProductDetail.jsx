@@ -56,17 +56,45 @@ const ProductDetail = () => {
           {product.category}
         </p>
         <h2>${product.price}</h2>
-        <div className={styles.quantity}>
-          <button onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}>-</button>
-          <span>{quantity}</span>
-          <button onClick={() => setQuantity((prev) => prev + 1)}> +</button>
-        </div>
-        <button
-          onClick={handleAddToCart}
-          className={styles.addToCart}
-        >
-          Add To Cart
-        </button>
+       <div className={styles.purchaseSection}>
+  <div className={styles.quantityBox}>
+    <span className={styles.quantityLabel}>
+      Quantity
+    </span>
+
+    <div className={styles.quantity}>
+      <button
+        onClick={() =>
+          setQuantity((prev) =>
+            Math.max(1, prev - 1)
+          )
+        }
+        aria-label="Decrease quantity"
+      >
+        −
+      </button>
+
+      <span>{quantity}</span>
+
+      <button
+        onClick={() =>
+          setQuantity((prev) => prev + 1)
+        }
+        aria-label="Increase quantity"
+      >
+        +
+      </button>
+    </div>
+  </div>
+
+  <button
+    onClick={handleAddToCart}
+    className={styles.addToCart}
+  >
+    Add to Cart • $
+    {(product.price * quantity).toFixed(2)}
+  </button>
+</div>
         <p>{product.description}</p>
       </div>
     </section>

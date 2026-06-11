@@ -1,6 +1,7 @@
 import { ShoppingBag } from "lucide-react";
 import styles from "../../styles/Navbar.module.scss";
 import useCart from "../../stores/useCart";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ onCartOpen }) => {
   const { cartCount } = useCart();
@@ -8,10 +9,12 @@ const Navbar = ({ onCartOpen }) => {
   return (
     <header className={styles.navbar}>
       <div className={styles.container}>
-        <h1 className={styles.logo}>
-          ShopHub
-        </h1>
-
+     <Link
+  to="/"
+  className={styles.logo}
+>
+  nua
+</Link>
         <button
           className={styles.cartButton}
           onClick={onCartOpen}
