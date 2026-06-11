@@ -1,0 +1,106 @@
+@keyframes shimmer {
+  0% {
+    background-position: -450px 0;
+  }
+
+  100% {
+    background-position: 450px 0;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.gallery,
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.mainImage,
+.thumbnail,
+.title,
+.category,
+.price,
+.description,
+.descriptionSmall,
+.button {
+  background: linear-gradient(
+    90deg,
+    #f3f4f6 25%,
+    #e5e7eb 50%,
+    #f3f4f6 75%
+  );
+
+  background-size: 400px 100%;
+  animation: shimmer 1.5s infinite linear;
+
+  border-radius: 8px;
+}
+
+.mainImage {
+  height: 500px;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+}
+
+.info {
+  gap: 20px;
+}
+
+.title {
+  height: 40px;
+  width: 80%;
+}
+
+.category {
+  height: 20px;
+  width: 30%;
+}
+
+.price {
+  height: 30px;
+  width: 25%;
+}
+
+.description {
+  height: 16px;
+  width: 100%;
+}
+
+.descriptionSmall {
+  height: 16px;
+  width: 70%;
+}
+
+.button {
+  width: 180px;
+  height: 48px;
+  margin-top: 20px;
+}
+
+@media (max-width: 767px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .mainImage {
+    height: 350px;
+  }
+}

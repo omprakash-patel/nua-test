@@ -1,0 +1,35 @@
+.container {
+  max-width: 1280px;
+
+  margin: 0 auto;
+
+  padding: 40px 20px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 48px;
+}
+
+.info {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.category {
+  text-transform: capitalize;
+
+  color: #6b7280;
+}
+
+@media (max-width: 767px) {
+  .container {
+    grid-template-columns: 1fr;
+
+    gap: 24px;
+  }
+}

@@ -1,0 +1,43 @@
+.page {
+  max-width: 1280px;
+
+  margin: 0 auto;
+
+  padding: 32px 20px;
+}
+
+.heading {
+  font-size: 32px;
+  font-weight: 700;
+
+  margin-bottom: 32px;
+
+  color: #111827;
+}
+
+.message {
+  text-align: center;
+
+  font-size: 18px;
+
+  padding: 60px 0;
+}
+
+// skeleton---------------------
+.skeletonGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .skeletonGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .skeletonGrid {
+    grid-template-columns: 1fr;
+  }
+}

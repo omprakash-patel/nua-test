@@ -1,0 +1,69 @@
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mainImage {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+
+  padding: 24px;
+
+  height: 500px;
+
+  background: #fff;
+}
+
+.mainImage img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 12px;
+}
+
+.thumb {
+  width: 80px;
+  height: 80px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  background: white;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+// mobile
+@media (max-width: 767px) {
+  .mainImage {
+    height: 350px;
+  }
+
+  .thumbnails {
+    overflow-x: auto;
+
+    white-space: nowrap;
+
+    padding-bottom: 8px;
+  }
+
+  .thumb {
+    flex-shrink: 0;
+  }
+}
