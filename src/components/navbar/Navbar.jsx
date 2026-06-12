@@ -9,6 +9,7 @@ const Navbar = ({ onCartOpen }) => {
   return (
     <header className={styles.navbar}>
       <div className={styles.container}>
+        
      <Link
   to="/"
   className={styles.logo}

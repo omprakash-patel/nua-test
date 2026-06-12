@@ -31,6 +31,8 @@ function Home() {
   };
 
   return (
+  <>
+  
     <section className={styles.page}>
       <h1 className={styles.heading}>
         Products
@@ -48,6 +50,7 @@ function Home() {
         <ProductGrid products={products} />
       )}
     </section>
+    </>
   );
 }
 
