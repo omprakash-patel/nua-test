@@ -154,9 +154,11 @@ More details can be found in `DECISIONS.md`.
 ---
 
 ## Lighthouse
+A google pagespeed audit was performed on the deployed application.
 
-A google pagespeed report screenshot is available in:
+Screenshot available at:
 
+docs/lighthouse-report.png
 ```txt
 docs/pagespeed-report-desktop.png
 docs/pagespeed-report-mobile.png

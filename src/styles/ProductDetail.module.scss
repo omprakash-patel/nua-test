@@ -130,3 +130,14 @@
 .addToCart:active {
   transform: scale(0.98);
 }
+
+.error {
+  color: #dc2626;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.addToCart:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

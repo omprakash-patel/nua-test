@@ -6,18 +6,32 @@ import { getProductById } from "../services/productService";
 import ProductDetailSkeleton from "../components/ProductDetail/ProductDetailSkeleton";
 import ProductGallery from "../components/ProductDetail/ProductGallery/ProductGallery";
 import useCart from "../stores/useCart";
-
+import { addToCartApi } from "../services/cartService";
 const ProductDetail = () => {
   const { id } = useParams();
   const { addToCart } = useCart();
+  
   const [product, setProduct] = useState(null);
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] =useState(1);
   const [loading, setLoading] = useState(true);
+const [isAdding, setIsAdding] =useState(false);
 
+const [cartError, setCartError] = useState("");
   const [error, setError] = useState("");
-  const handleAddToCart = () => {
+const handleAddToCart = async () => {
+  try {
+    setCartError("");
+    setIsAdding(true);
+
+    await addToCartApi(product);
+
     addToCart(product, quantity);
-  };
+  } catch (error) {
+    setCartError(error.message);
+  } finally {
+    setIsAdding(false);
+  }
+};
   useEffect(() => {
     loadProduct();
   }, [id]);
@@ -86,14 +100,29 @@ const ProductDetail = () => {
       </button>
     </div>
   </div>
-
-  <button
+<button
+  onClick={handleAddToCart}
+  disabled={isAdding}
+  className={styles.addToCart}
+>
+  {isAdding
+    ? "Adding..."
+    : "Add To Cart"}
+</button>
+{
+  cartError && (
+    <p className={styles.error}>
+      {cartError}
+    </p>
+  )
+}
+  {/* <button
     onClick={handleAddToCart}
     className={styles.addToCart}
   >
     Add to Cart • $
     {(product.price * quantity).toFixed(2)}
-  </button>
+  </button> */}
 </div>
         <p>{product.description}</p>
       </div>
