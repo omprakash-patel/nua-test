@@ -5,8 +5,7 @@ import Navbar from "../components/navbar/Navbar";
 import CartDrawer from "../components/CartDrawer/CartDrawer";
 
 const MainLayout = () => {
-  const [isCartOpen, setIsCartOpen] =
-    useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const openCart = () => {
     setIsCartOpen(true);

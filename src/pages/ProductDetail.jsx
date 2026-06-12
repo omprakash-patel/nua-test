@@ -10,7 +10,6 @@ import { addToCartApi } from "../services/cartService";
 const ProductDetail = () => {
   const { id } = useParams();
   const { addToCart } = useCart();
-  
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] =useState(1);
   const [loading, setLoading] = useState(true);
@@ -22,9 +21,7 @@ const handleAddToCart = async () => {
   try {
     setCartError("");
     setIsAdding(true);
-
     await addToCartApi(product);
-
     addToCart(product, quantity);
   } catch (error) {
     setCartError(error.message);

@@ -5,11 +5,9 @@ import { Link } from "react-router-dom";
 
 const Navbar = ({ onCartOpen }) => {
   const { cartCount } = useCart();
-
   return (
     <header className={styles.navbar}>
       <div className={styles.container}>
-        
      <Link
   to="/"
   className={styles.logo}

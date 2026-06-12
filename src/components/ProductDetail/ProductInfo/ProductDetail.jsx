@@ -10,11 +10,8 @@ import styles from "./ProductDetail.module.scss";
 
 const ProductDetail = () => {
   const { id } = useParams();
-
   const [product, setProduct] = useState(null);
-
   const [loading, setLoading] = useState(true);
-
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -24,7 +21,6 @@ const ProductDetail = () => {
   const loadProduct = async () => {
     try {
       const data = await getProductById(id);
-
       setProduct(data);
     } catch (err) {
       setError("Failed to load product");
@@ -49,16 +45,12 @@ const ProductDetail = () => {
   return (
     <section className={styles.container}>
       <ProductGallery product={product} />
-
       <div className={styles.info}>
         <h1>{product.title}</h1>
-
         <p className={styles.category}>
           {product.category}
         </p>
-
         <h2>${product.price}</h2>
-
         <p>{product.description}</p>
       </div>
     </section>

@@ -10,9 +10,7 @@ import ProductGridSkeleton from "../components/ProductCard/ProductGridSkeleton";
 
 function Home() {
   const [products, setProducts] = useState([]);
-
   const [loading, setLoading] = useState(true);
-
   const [error, setError] = useState("");
 
   useEffect(() => {

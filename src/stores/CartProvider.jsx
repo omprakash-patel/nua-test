@@ -7,11 +7,8 @@ const CartProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    localStorage.setItem(
-      "cart",
-      JSON.stringify(cartItems)
-    );
-  }, [cartItems]);
+    localStorage.setItem( "cart", JSON.stringify(cartItems));
+ }, [cartItems]);
 
   const addToCart = (product, quantity = 1) => {
     setCartItems((prev) => {

@@ -5,8 +5,7 @@ import styles from "../../styles/CartDrawer.module.scss";
 
 const CartDrawer = ({
   isOpen,
-  onClose,
-}) => {
+  onClose}) => {
   const {
     cartItems,
     subtotal,
